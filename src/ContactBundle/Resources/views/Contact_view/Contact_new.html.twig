@@ -1,0 +1,13 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Address Book{% endblock %}
+
+{% block body %}
+<div>Créer un nouveau contact</div>
+<br />
+	{{ form_start(form, {'action': path('contact_new'), 'method': 'POST'}) }}
+	{{ form_row(form) }}
+	{{ form_widget(form.save )}}
+
+{% endblock %}

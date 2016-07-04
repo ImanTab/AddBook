@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Address Book{% endblock %}
+
+{% block body %}
+<div>Modification</div>
+<br />
+	{{ form_start(form, {'action': path('contact_edit', {"contactId" : contact.id}), 'method': 'POST'}) }}
+	{{ form_row(form) }}
+	{{ form_widget(form.save )}}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Address Book{% endblock %}
+
+{% block body %}
+<div>
+  <form action="{{ path('contact_new')}}">
+  <input type="submit" value="Ajouter un contact">
+  </form>
+</div>
+<table cellpadding=6>
+{% for user in contact %}
+<tr>
+        <td><a href="{{ path('contact_show', {"contactId" : user.id})}}">{{ user.firstname }}</a></td>
+        <td><form action="{{ path('contact_edit', {"contactId" : user.id})}}">
+              <input type="submit" value="Modify">
+            </form></td>
+    <td><form action="{{ path('contact_delete', {"contactId" : user.id})}}">
+              <input type="submit" value="Delete">
+            </form></td>
+  </tr>
+  <br />
+    {% endfor %}
+    </table>
+
+{% endblock %}

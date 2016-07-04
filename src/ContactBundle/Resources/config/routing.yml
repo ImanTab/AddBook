@@ -1,0 +1,19 @@
+contact_delete:
+        path:     /delete/{contactId}
+        defaults: { _controller: ContactBundle:Contact:delete }
+
+contact_edit:
+        path:     /edit/{contactId}
+        defaults: { _controller: ContactBundle:Contact:edit }
+
+contact_show:
+    path:     /show/{contactId}
+    defaults: { _controller: ContactBundle:Contact:show }
+
+contact_list:
+    path: /list
+    defaults: {_controller: ContactBundle:Contact:list }
+
+contact_new:
+    path:     /new
+    defaults: { _controller: ContactBundle:Contact:new }
